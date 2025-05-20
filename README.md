@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# 📝 Markdown Notes App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An offline-first note-taking app built using React and IndexedDB. Create, edit, and manage notes locally, with automatic syncing to a mock backend when you're online.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 📝 Create, edit, and delete notes
+- 🔍 Search notes by title or content
+- 💾 Offline-first support with IndexedDB
+- 🌐 Sync with backend when online
+- 📊 Status indicators: Unsynced, Syncing, Synced
+- 🕒 Notes sorted by last updated time
+- ⏳ Upcoming: Live Markdown preview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🏗️ Tech Stack
 
-### `npm test`
+- **React** – Frontend UI
+- **IndexedDB** (`idb`) – Local offline storage
+- **JSON Server** – Mock backend
+- **JavaScript Fetch API** – Sync logic
+- **Inline CSS** – Simple styling
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📦 Design Decisions, Assumptions & Limitations
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ✅ Design Decisions
 
-### `npm run eject`
+- **Offline-first approach**: Using IndexedDB ensures the app works without an internet connection.
+- **Sync on demand (not real-time typing)**: Sync is triggered on save or when connectivity is restored.
+- **Status tracking per note**: Each note has a `syncStatus` (`unsynced`, `syncing`, `synced`) for visual feedback.
+- **Flat JSON format**: Kept notes simple and independent for easier syncing and conflict avoidance.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### ⚠️ Assumptions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- A single user is using the app — no multi-user accounts or auth.
+- Internet connection is stable during sync.
+- Notes are synced fully (no merge conflict handling).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 🚫 Limitations
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- No rich-text or Markdown preview (coming soon).
+- No authentication or encryption.
+- Sync errors are logged in console but not shown in UI.
+- Backend is only a mock JSON server — not a persistent DB.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📦 Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 1. Clone the Project
 
-### Code Splitting
+```bash
+1.CLone
+git clone https://github.com/miteshtiwari/markdown-notes-app.git
+cd markdown-notes-app
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Install Dependencies
+npm install
 
-### Analyzing the Bundle Size
+3. Start JSON Server (Mock Backend)
+npm install -g json-server
+json-server --watch db.json --port 3001
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4. Start the App
+npm start
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
