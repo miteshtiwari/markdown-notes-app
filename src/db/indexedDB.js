@@ -1,7 +1,6 @@
 import { openDB } from 'idb';
 
-const DB_NAME = 'notes-db';
-const STORE_NAME = 'notes';
+
 
 export async function getDB() {
   return openDB(DB_NAME, 1, {
