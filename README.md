@@ -65,10 +65,15 @@ cd markdown-notes-app
 2. Install Dependencies
 npm install
 
-3. Start JSON Server (Mock Backend)
+3. Create db.json file in root directory with content Given below
+{
+  "notes":[]
+}
+
+4. Start JSON Server (Mock Backend)
 npm install -g json-server
 json-server --watch db.json --port 3001
 
-4. Start the App
+5. now switch to another Terminal  & Start the App
 npm start
 
