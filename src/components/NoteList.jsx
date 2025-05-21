@@ -67,7 +67,7 @@ const styles = {
     padding: '12px 16px',
   },
 
-  // New styles for sync status text colors
+  
   syncStatus: {
     fontWeight: '600',
     marginRight: '8px',
@@ -87,7 +87,7 @@ export default function NoteList({ notes, onSelect, onNew }) {
       note.content.toLowerCase().includes(search.toLowerCase())
   );
 
-  // Helper to map syncStatus to text and style
+  
   function renderSyncStatus(status) {
     switch (status) {
       case 'unsynced':
