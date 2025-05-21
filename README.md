@@ -16,6 +16,23 @@ An offline-first note-taking app built using React and IndexedDB. Create, edit, 
 
 ---
 
+## Deployment Link 
+Note :- If you want to see full functionality of this you just need to run Backend server in your local By doing this :-
+
+1. Create db.json file in root directory with content Given below
+{
+  "notes":[]
+}
+
+2. Start JSON Server (Mock Backend)
+npm install -g json-server
+--
+json-server --watch db.json --port 3001
+
+
+Link :- https://markdown-notes-app-8j86.vercel.app/
+
+
 ## 🏗️ Tech Stack
 
 - **React** – Frontend UI
