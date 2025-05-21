@@ -70,9 +70,6 @@ const styles = {
 
 export default function App() {
 
-  const API_URL = 'http://localhost:3001/notes';
-const DB_NAME = 'notes-db';
-const STORE_NAME = 'notes';
 
 async function getDB() {
   return openDB(DB_NAME, 1, {
