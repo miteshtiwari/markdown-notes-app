@@ -43,18 +43,6 @@ const styles = {
 };
 
 export default function NoteEditor({ note, onSave, onDelete,setNotes }) {
-  // const [localNote, setLocalNote] = useState(note);
-
-  // useEffect(() => {
-  //   const timeout = setTimeout(() => {
-  //     onSave(localNote);
-  //   }, 500);
-  //   return () => clearTimeout(timeout);
-  // }, [localNote]);
-
-  // useEffect(() => {
-  //   setLocalNote(note);
-  // }, [note]);
   const [localNote, setLocalNote] = useState(note);
 
   useEffect(() => {
